@@ -679,13 +679,10 @@ function main(config) {
     "DOMAIN-SUFFIX,intercomcdn.com,Claude服务",
     "DOMAIN,cdn.usefathom.com,Claude服务",
 
-    // NTP 时区检测和 Anthropic 兜底规则
-    "GEOSITE,category-ntp,Claude服务",
+    // NTP 时区检测和 Anthropic IP 段兜底
     "AND,((NETWORK,UDP),(DST-PORT,123)),Claude服务",
-    "GEOSITE,anthropic,Claude服务",
     "IP-CIDR,160.79.104.0/21,Claude服务,no-resolve",
     "IP-CIDR6,2607:6bc0::/32,Claude服务,no-resolve",
-    "IP-ASN,399358,Claude服务,no-resolve",
 
     "DOMAIN-SUFFIX,chatgpt.com,AI服务",
     "DOMAIN-SUFFIX,openai.com,AI服务",
