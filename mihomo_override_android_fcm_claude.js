@@ -714,3 +714,56 @@ function main(config) {
 
   return config;
 }
+
+function loadSubStoreConfig(content) {
+  if (!content || typeof content !== "string") {
+    return {};
+  }
+
+  if (
+    typeof ProxyUtils !== "undefined" &&
+    ProxyUtils.yaml &&
+    typeof ProxyUtils.yaml.safeLoad === "function"
+  ) {
+    return ProxyUtils.yaml.safeLoad(content) || {};
+  }
+
+  return JSON.parse(content);
+}
+
+function dumpSubStoreConfig(config) {
+  if (
+    typeof ProxyUtils !== "undefined" &&
+    ProxyUtils.yaml &&
+    typeof ProxyUtils.yaml.safeDump === "function"
+  ) {
+    return ProxyUtils.yaml.safeDump(config);
+  }
+
+  return JSON.stringify(config, null, 2);
+}
+
+// Sub-Store 文件脚本入口：读取生成中的 Mihomo 配置，复用 main(config) 后写回。
+function operator(proxies, targetPlatform, context) {
+  var sourceContent = "";
+
+  if (typeof $content === "string" && $content.trim()) {
+    sourceContent = $content;
+  } else if (
+    typeof $files !== "undefined" &&
+    Array.isArray($files) &&
+    typeof $files[0] === "string"
+  ) {
+    sourceContent = $files[0];
+  }
+
+  var config = loadSubStoreConfig(sourceContent);
+
+  if (!config || typeof config !== "object" || Array.isArray(config)) {
+    config = {};
+  }
+
+  $content = dumpSubStoreConfig(main(config));
+
+  return proxies || [];
+}
