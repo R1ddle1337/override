@@ -68,43 +68,6 @@ function main(config) {
     };
   }
 
-  var claudeRules = [
-    // Claude / Anthropic 核心域名
-    "DOMAIN-SUFFIX,anthropic.com,Claude服务",
-    "DOMAIN-SUFFIX,anthropic-ai.com,Claude服务",
-    "DOMAIN-SUFFIX,claude.ai,Claude服务",
-    "DOMAIN-SUFFIX,claude.com,Claude服务",
-    "DOMAIN-SUFFIX,clau.de,Claude服务",
-    "DOMAIN-SUFFIX,claudeusercontent.com,Claude服务",
-    "DOMAIN-SUFFIX,claudemcpclient.com,Claude服务",
-    "DOMAIN-SUFFIX,claudemcpcontent.com,Claude服务",
-
-    // Claude Code 认证、CDN、内容和遥测
-    "DOMAIN,anthropic.auth0.com,Claude服务",
-    "DOMAIN,anthropic-com.ghost.io,Claude服务",
-    "DOMAIN,anthropic.com.cdn.cloudflare.net,Claude服务",
-    "DOMAIN,servd-anthropic-website.b-cdn.net,Claude服务",
-    "DOMAIN-SUFFIX,sentry.io,Claude服务",
-    "DOMAIN-SUFFIX,statsigapi.net,Claude服务",
-    "DOMAIN,browser-intake-us5-datadoghq.com,Claude服务",
-    "DOMAIN-KEYWORD,datadog,Claude服务",
-    "DOMAIN-KEYWORD,sentry,Claude服务",
-    "DOMAIN-KEYWORD,sift,Claude服务",
-
-    // Anthropic 网站第三方组件，保持出口一致。
-    "DOMAIN-SUFFIX,intercom.io,Claude服务",
-    "DOMAIN-SUFFIX,intercomcdn.com,Claude服务",
-    "DOMAIN,cdn.usefathom.com,Claude服务",
-
-    // NTP 和 Anthropic IP / ASN 兜底，降低域名漏配或时区泄露风险。
-    "GEOSITE,category-ntp,Claude服务",
-    "AND,((NETWORK,UDP),(DST-PORT,123)),Claude服务",
-    "GEOSITE,anthropic,Claude服务",
-    "IP-CIDR,160.79.104.0/21,Claude服务,no-resolve",
-    "IP-CIDR6,2607:6bc0::/32,Claude服务,no-resolve",
-    "IP-ASN,399358,Claude服务,no-resolve"
-  ];
-
 
   // 为订阅型 proxy-provider 补充健康检查。
   // 保留订阅原有参数，仅补充可靠的缺省值。
@@ -545,8 +508,7 @@ function main(config) {
     "PROCESS-PATH-REGEX,(?i).*\\\\steamapps\\\\common\\\\.*,游戏联机",
 
     "GEOSITE,private,DIRECT",
-    "GEOIP,private,DIRECT,no-resolve"
-  ].concat(claudeRules, [
+    "GEOIP,private,DIRECT,no-resolve",
 
     "DOMAIN-SUFFIX,spotify.com,Spotify",
     "DOMAIN-SUFFIX,spotifycdn.com,Spotify",
@@ -582,6 +544,26 @@ function main(config) {
     "GEOSITE,youtube,Google服务",
     "GEOSITE,google,Google服务",
 
+    // Claude / Anthropic 核心域名
+    "DOMAIN-SUFFIX,anthropic.com,Claude服务",
+    "DOMAIN-SUFFIX,anthropic-ai.com,Claude服务",
+    "DOMAIN-SUFFIX,claude.ai,Claude服务",
+    "DOMAIN-SUFFIX,claude.com,Claude服务",
+    "DOMAIN-SUFFIX,clau.de,Claude服务",
+    "DOMAIN-SUFFIX,claudeusercontent.com,Claude服务",
+    "DOMAIN-SUFFIX,claudemcpclient.com,Claude服务",
+    "DOMAIN-SUFFIX,claudemcpcontent.com,Claude服务",
+
+    // Claude 网站认证、静态资源和内容
+    "DOMAIN,anthropic.auth0.com,Claude服务",
+    "DOMAIN,anthropic-com.ghost.io,Claude服务",
+    "DOMAIN,anthropic.com.cdn.cloudflare.net,Claude服务",
+    "DOMAIN,servd-anthropic-website.b-cdn.net,Claude服务",
+
+    // Anthropic 官方入站地址兜底
+    "IP-CIDR,160.79.104.0/23,Claude服务,no-resolve",
+    "IP-CIDR6,2607:6bc0::/48,Claude服务,no-resolve",
+
     "DOMAIN-SUFFIX,chatgpt.com,AI服务",
     "DOMAIN-SUFFIX,openai.com,AI服务",
     "DOMAIN-SUFFIX,oaistatic.com,AI服务",
@@ -604,7 +586,7 @@ function main(config) {
     "GEOIP,CN,DIRECT,no-resolve",
 
     "MATCH,默认代理"
-  ]);
+  ];
 
   return config;
 }
