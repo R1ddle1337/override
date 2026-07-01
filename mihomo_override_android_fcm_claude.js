@@ -269,26 +269,6 @@ function main(config) {
       ]
     },
     {
-      name: "Claude服务",
-      type: "select",
-      proxies: [
-        "美国自动",
-        "日本自动",
-        "新加坡自动",
-        "韩国自动",
-        "澳大利亚自动",
-        "稳定自动",
-        "美国节点",
-        "日本节点",
-        "新加坡节点",
-        "韩国节点",
-        "澳大利亚节点",
-        "香港节点",
-        "其他节点",
-        "全部节点"
-      ]
-    },
-    {
       name: "Google服务",
       type: "select",
       proxies: [
@@ -650,25 +630,21 @@ function main(config) {
     "GEOSITE,youtube,Google服务",
     "GEOSITE,google,Google服务",
 
-    // Claude / Anthropic 核心域名
-    "DOMAIN-SUFFIX,anthropic.com,Claude服务",
-    "DOMAIN-SUFFIX,anthropic-ai.com,Claude服务",
-    "DOMAIN-SUFFIX,claude.ai,Claude服务",
-    "DOMAIN-SUFFIX,claude.com,Claude服务",
-    "DOMAIN-SUFFIX,clau.de,Claude服务",
-    "DOMAIN-SUFFIX,claudeusercontent.com,Claude服务",
-    "DOMAIN-SUFFIX,claudemcpclient.com,Claude服务",
-    "DOMAIN-SUFFIX,claudemcpcontent.com,Claude服务",
-
-    // Claude 网站认证、静态资源和内容
-    "DOMAIN,anthropic.auth0.com,Claude服务",
-    "DOMAIN,anthropic-com.ghost.io,Claude服务",
-    "DOMAIN,anthropic.com.cdn.cloudflare.net,Claude服务",
-    "DOMAIN,servd-anthropic-website.b-cdn.net,Claude服务",
-
-    // Anthropic 官方入站地址兜底
-    "IP-CIDR,160.79.104.0/23,Claude服务,no-resolve",
-    "IP-CIDR6,2607:6bc0::/48,Claude服务,no-resolve",
+    // Claude / Anthropic 归入 AI 服务，不单独建立手机端分流。
+    "DOMAIN-SUFFIX,anthropic.com,AI服务",
+    "DOMAIN-SUFFIX,anthropic-ai.com,AI服务",
+    "DOMAIN-SUFFIX,claude.ai,AI服务",
+    "DOMAIN-SUFFIX,claude.com,AI服务",
+    "DOMAIN-SUFFIX,clau.de,AI服务",
+    "DOMAIN-SUFFIX,claudeusercontent.com,AI服务",
+    "DOMAIN-SUFFIX,claudemcpclient.com,AI服务",
+    "DOMAIN-SUFFIX,claudemcpcontent.com,AI服务",
+    "DOMAIN,anthropic.auth0.com,AI服务",
+    "DOMAIN,anthropic-com.ghost.io,AI服务",
+    "DOMAIN,anthropic.com.cdn.cloudflare.net,AI服务",
+    "DOMAIN,servd-anthropic-website.b-cdn.net,AI服务",
+    "IP-CIDR,160.79.104.0/23,AI服务,no-resolve",
+    "IP-CIDR6,2607:6bc0::/48,AI服务,no-resolve",
 
     "DOMAIN-SUFFIX,chatgpt.com,AI服务",
     "DOMAIN-SUFFIX,openai.com,AI服务",
