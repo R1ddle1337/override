@@ -660,29 +660,15 @@ function main(config) {
     "DOMAIN-SUFFIX,claudemcpclient.com,Claude服务",
     "DOMAIN-SUFFIX,claudemcpcontent.com,Claude服务",
 
-    // Claude CDN、认证、静态资源和内容
+    // Claude 网站认证、静态资源和内容
     "DOMAIN,anthropic.auth0.com,Claude服务",
     "DOMAIN,anthropic-com.ghost.io,Claude服务",
     "DOMAIN,anthropic.com.cdn.cloudflare.net,Claude服务",
     "DOMAIN,servd-anthropic-website.b-cdn.net,Claude服务",
 
-    // Claude 监控、遥测和反欺诈
-    "DOMAIN-SUFFIX,sentry.io,Claude服务",
-    "DOMAIN-SUFFIX,statsigapi.net,Claude服务",
-    "DOMAIN,browser-intake-us5-datadoghq.com,Claude服务",
-    "DOMAIN-KEYWORD,datadog,Claude服务",
-    "DOMAIN-KEYWORD,sentry,Claude服务",
-    "DOMAIN-KEYWORD,sift,Claude服务",
-
-    // Anthropic 网站第三方组件
-    "DOMAIN-SUFFIX,intercom.io,Claude服务",
-    "DOMAIN-SUFFIX,intercomcdn.com,Claude服务",
-    "DOMAIN,cdn.usefathom.com,Claude服务",
-
-    // NTP 时区检测和 Anthropic IP 段兜底
-    "AND,((NETWORK,UDP),(DST-PORT,123)),Claude服务",
-    "IP-CIDR,160.79.104.0/21,Claude服务,no-resolve",
-    "IP-CIDR6,2607:6bc0::/32,Claude服务,no-resolve",
+    // Anthropic 官方入站地址兜底
+    "IP-CIDR,160.79.104.0/23,Claude服务,no-resolve",
+    "IP-CIDR6,2607:6bc0::/48,Claude服务,no-resolve",
 
     "DOMAIN-SUFFIX,chatgpt.com,AI服务",
     "DOMAIN-SUFFIX,openai.com,AI服务",
