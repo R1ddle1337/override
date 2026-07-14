@@ -374,7 +374,8 @@ function main(config) {
       name: "其他节点",
       type: "select",
       "include-all": true,
-      "exclude-filter": knownRegionFilter
+      "exclude-filter": knownRegionFilter,
+      "exclude-type": "Compatible"
     },
     {
       name: "全部节点",
