@@ -23,8 +23,6 @@ function main(config) {
     japan: "(?i)(日本|东京|東京|大阪|埼玉|\\bJP\\b|Japan|Tokyo|Osaka)",
     singapore: "(?i)(新加坡|狮城|獅城|\\bSG\\b|Singapore)",
     unitedStates: "(?i)(美国|美國|美西|美东|美東|洛杉矶|洛杉磯|西雅图|西雅圖|圣何塞|聖何塞|纽约|紐約|达拉斯|達拉斯|\\bUS\\b|\\bUSA\\b|United States|Los Angeles|Seattle|San Jose|New York|Dallas)",
-    australia: "(?i)(澳大利亚|澳大利亞|澳洲|悉尼|雪梨|墨尔本|墨爾本|\\bAU\\b|Australia|Sydney|Melbourne)",
-    southKorea: "(?i)(韩国|韓國|首尔|首爾|釜山|\\bKR\\b|Korea|South Korea|Seoul|Busan)"
   };
 
   var knownRegionFilter =
@@ -33,8 +31,6 @@ function main(config) {
     "日本|东京|東京|大阪|埼玉|\\bJP\\b|Japan|Tokyo|Osaka|" +
     "新加坡|狮城|獅城|\\bSG\\b|Singapore|" +
     "美国|美國|美西|美东|美東|洛杉矶|洛杉磯|西雅图|西雅圖|圣何塞|聖何塞|纽约|紐約|达拉斯|達拉斯|\\bUS\\b|\\bUSA\\b|United States|Los Angeles|Seattle|San Jose|New York|Dallas|" +
-    "澳大利亚|澳大利亞|澳洲|悉尼|雪梨|墨尔本|墨爾本|\\bAU\\b|Australia|Sydney|Melbourne|" +
-    "韩国|韓國|首尔|首爾|釜山|\\bKR\\b|Korea|South Korea|Seoul|Busan" +
     ")";
 
   function manualGroup(name, filter) {
@@ -233,16 +229,12 @@ function main(config) {
         "香港自动",
         "新加坡自动",
         "日本自动",
-        "韩国自动",
         "美国自动",
-        "澳大利亚自动",
         "其他自动",
         "香港节点",
         "新加坡节点",
         "日本节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "全部节点"
       ]
@@ -254,15 +246,11 @@ function main(config) {
         "美国自动",
         "新加坡自动",
         "日本自动",
-        "韩国自动",
-        "澳大利亚自动",
         "香港自动",
         "稳定自动",
         "美国节点",
         "新加坡节点",
         "日本节点",
-        "韩国节点",
-        "澳大利亚节点",
         "香港节点",
         "其他节点",
         "全部节点"
@@ -275,15 +263,12 @@ function main(config) {
         "新加坡自动",
         "日本自动",
         "美国自动",
-        "韩国自动",
         "香港自动",
         "稳定自动",
         "新加坡节点",
         "日本节点",
         "美国节点",
-        "韩国节点",
         "香港节点",
-        "澳大利亚节点",
         "其他节点",
         "全部节点"
       ]
@@ -296,16 +281,12 @@ function main(config) {
         "新加坡FCM稳定",
         "日本FCM稳定",
         "香港FCM稳定",
-        "韩国FCM稳定",
         "美国FCM稳定",
-        "澳大利亚FCM稳定",
         "其他FCM稳定",
         "新加坡节点",
         "日本节点",
         "香港节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "稳定自动",
         "DIRECT",
@@ -319,15 +300,12 @@ function main(config) {
         "新加坡自动",
         "香港自动",
         "日本自动",
-        "韩国自动",
         "美国自动",
         "稳定自动",
         "新加坡节点",
         "香港节点",
         "日本节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "全部节点"
       ]
@@ -340,16 +318,12 @@ function main(config) {
         "香港自动",
         "日本自动",
         "新加坡自动",
-        "韩国自动",
         "美国自动",
-        "澳大利亚自动",
         "其他自动",
         "香港节点",
         "日本节点",
         "新加坡节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "DIRECT",
         "全部节点"
@@ -364,16 +338,12 @@ function main(config) {
         "香港自动",
         "日本自动",
         "新加坡自动",
-        "韩国自动",
         "美国自动",
-        "澳大利亚自动",
         "其他自动",
         "香港节点",
         "日本节点",
         "新加坡节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "全部节点"
       ]
@@ -385,17 +355,13 @@ function main(config) {
         "香港自动",
         "日本自动",
         "新加坡自动",
-        "韩国自动",
         "稳定自动",
         "美国自动",
-        "澳大利亚自动",
         "其他自动",
         "香港节点",
         "日本节点",
         "新加坡节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "DIRECT",
         "全部节点"
@@ -409,16 +375,12 @@ function main(config) {
         "香港自动",
         "日本自动",
         "新加坡自动",
-        "韩国自动",
         "美国自动",
-        "澳大利亚自动",
         "稳定自动",
         "香港节点",
         "日本节点",
         "新加坡节点",
-        "韩国节点",
         "美国节点",
-        "澳大利亚节点",
         "其他节点",
         "全部节点"
       ]
@@ -430,9 +392,7 @@ function main(config) {
     manualGroup("香港节点", filters.hongKong),
     manualGroup("新加坡节点", filters.singapore),
     manualGroup("日本节点", filters.japan),
-    manualGroup("韩国节点", filters.southKorea),
     manualGroup("美国节点", filters.unitedStates),
-    manualGroup("澳大利亚节点", filters.australia),
     {
       name: "其他节点",
       type: "select",
@@ -456,9 +416,7 @@ function main(config) {
         "香港自动",
         "新加坡自动",
         "日本自动",
-        "韩国自动",
         "美国自动",
-        "澳大利亚自动",
         "其他自动"
       ],
       url: testUrl,
@@ -487,9 +445,7 @@ function main(config) {
     autoGroup("香港自动", filters.hongKong),
     autoGroup("新加坡自动", filters.singapore),
     autoGroup("日本自动", filters.japan),
-    autoGroup("韩国自动", filters.southKorea),
     autoGroup("美国自动", filters.unitedStates),
-    autoGroup("澳大利亚自动", filters.australia),
     {
       name: "其他自动",
       type: "url-test",
@@ -520,9 +476,7 @@ function main(config) {
         "新加坡FCM稳定",
         "日本FCM稳定",
         "香港FCM稳定",
-        "韩国FCM稳定",
         "美国FCM稳定",
-        "澳大利亚FCM稳定",
         "其他FCM稳定"
       ],
       url: testUrl,
@@ -536,9 +490,7 @@ function main(config) {
     fcmStableRegionGroup("新加坡FCM稳定", filters.singapore),
     fcmStableRegionGroup("日本FCM稳定", filters.japan),
     fcmStableRegionGroup("香港FCM稳定", filters.hongKong),
-    fcmStableRegionGroup("韩国FCM稳定", filters.southKorea),
     fcmStableRegionGroup("美国FCM稳定", filters.unitedStates),
-    fcmStableRegionGroup("澳大利亚FCM稳定", filters.australia),
     {
       name: "其他FCM稳定",
       type: "fallback",
@@ -568,8 +520,6 @@ function main(config) {
         "香港自动",
         "稳定自动",
         "美国自动",
-        "韩国自动",
-        "澳大利亚自动",
         "其他自动"
       ]
     }
