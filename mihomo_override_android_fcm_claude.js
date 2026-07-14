@@ -30,7 +30,7 @@ function main(config) {
     "香港|港节点|\\bHK\\b|Hong ?Kong|" +
     "日本|东京|東京|大阪|埼玉|\\bJP\\b|Japan|Tokyo|Osaka|" +
     "新加坡|狮城|獅城|\\bSG\\b|Singapore|" +
-    "美国|美國|美西|美东|美東|洛杉矶|洛杉磯|西雅图|西雅圖|圣何塞|聖何塞|纽约|紐約|达拉斯|達拉斯|\\bUS\\b|\\bUSA\\b|United States|Los Angeles|Seattle|San Jose|New York|Dallas|" +
+    "美国|美國|美西|美东|美東|洛杉矶|洛杉磯|西雅图|西雅圖|圣何塞|聖何塞|纽约|紐約|达拉斯|達拉斯|\\bUS\\b|\\bUSA\\b|United States|Los Angeles|Seattle|San Jose|New York|Dallas" +
     ")";
 
   function manualGroup(name, filter) {
